@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="eroll.css">
+        <style>
+            .roll-face {
+                width: 30px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 40px;
+                border-radius: 3px;
+                background-color: #0045AD;
+                color: white;
+                float:left;
+                margin-left:20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="roll_block"></div>
+
+        <script type='text/javascript' src='jquery.min.js'></script>
+        <script type="text/javascript" src="animateBackground-plugin.js"></script>
+        <script type="text/javascript" src="eroll.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var ro = eroll.init("#roll_block", [
+                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
+                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
+                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+                var cnt = 0;
+                
+                setInterval(function(){
+                    cnt++;
+                    var strCnt = Math.floor((cnt/100)%10)+""+Math.floor(cnt%100/10)+""+Math.floor(cnt%10);
+                    ro.roll2string(strCnt);
+                }, 1000); 
+            });
+        </script>
+    </body>
+</html>
