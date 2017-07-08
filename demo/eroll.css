@@ -1,5 +1,6 @@
 .roll-face {
     text-align:center;
+    overflow:hidden;
 }
 
 .roll-words{

@@ -2,6 +2,10 @@
     <head>
         <link rel="stylesheet" href="eroll.css">
         <style>
+			.roll_block{
+				width:20%;height:100px;margin:50px auto
+			}
+			
             .roll-face {
                 width: 30px;
                 height: 60px;
@@ -25,15 +29,17 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 var ro = eroll.init("#roll_block", [
+                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
-                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
-                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+					['a', 'b', 'c', 'd']]);
                 var cnt = 0;
                 
                 setInterval(function(){
                     cnt++;
                     var strCnt = Math.floor((cnt/100)%10)+""+Math.floor(cnt%100/10)+""+Math.floor(cnt%10);
-                    ro.roll2string(strCnt);
+					var lastChar = new Array('a', 'b', 'c', 'd')[Math.floor(cnt%4)];
+                    ro.roll2string(strCnt+lastChar);
                 }, 1000); 
             });
         </script>
