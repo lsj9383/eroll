@@ -35,6 +35,22 @@
 该最小示例没有为显示设置样式，因此采用的是默认样式。最小demo的html[代码](https://github.com/lsj9383/eroll/blob/master/demo/simple.html);
 
 ## 二、样式定义
+如果没有定义样式，则是采用默认的样式，如果想自定义滑动块样式，则需要添加css代码。需要注意的是，每个滑动块都采用的是同一个样式。设置滑动块的样式，主要是对class="roll-face"的类进行样式设置。<br>
+需要注意的是，滑动块默认采用float:left;
+```css
+.roll-face {
+	width: 30px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 40px;
+	border-radius: 3px;
+	background-color: #0045AD;
+	color: white;
+	margin-left:20px;
+}
+```
+可以将以上样式添加到最小示例代码(simple.html)中进行测试。
+
 
 ## 三、API
 ### 1.init
